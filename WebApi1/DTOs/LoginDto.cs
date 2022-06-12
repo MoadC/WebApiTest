@@ -2,7 +2,7 @@
 
 namespace WebApi1.DTOs
 {
-    public class RegisterDto
+    public class LoginDto
     {
         [Required]
         public string Username { get; set; }

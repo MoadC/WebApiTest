@@ -5,9 +5,7 @@ using WebApi1.Entities;
 
 namespace WebApi1.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
 
@@ -15,6 +13,7 @@ namespace WebApi1.Controllers
         {
             _context = context;
         }
+        
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
@@ -30,9 +29,7 @@ namespace WebApi1.Controllers
         public async Task<ActionResult<AppUser>> GetUser(int id)
         {
             return await _context.Users.FindAsync(id);
-
         }
-
 
     }
 }
